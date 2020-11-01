@@ -11,6 +11,8 @@
 	<pigeon:reference id="echoService" timeout="1000"
 		url="com.lucifer.pigeon.demo.EchoService"
 		interface="com.lucifer.pigeon.demo.EchoService">
+        <!--客户端配置某个方法的超时时间-->
+        <pigeon:method name="echo" timeout="2000" />
 	</pigeon:reference>
 
 	<bean id="echoServiceCallback" class="com.lucifer.pigeon.demo.EchoServiceCallback" />
