@@ -11,10 +11,15 @@
 
 	<bean id="defaultEchoServiceImpl" class="com.lucifer.pigeon.demo.EchoServiceDefaultImpl" />
 
+	<pigeon:pool id="poolEcho" corePoolSize="5" maxPoolSize="20"
+				 workQueueSize="50" />
+
 	<pigeon:service
 		url="com.lucifer.pigeon.demo.EchoService"
 		interface="com.lucifer.pigeon.demo.EchoService"
+		useSharedPool="false"
 		ref="defaultEchoServiceImpl">
+		<pigeon:method name="echo" pool="poolEcho" />
 	</pigeon:service>
 
 </beans>
